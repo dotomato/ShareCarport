@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".UsingActivity" />
         <activity android:name=".StatementActivity"></activity>
+        <activity android:name=".ScanActivity"></activity>
     </application>
 
 </manifest>
