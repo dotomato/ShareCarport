@@ -41,26 +41,26 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.scanButton)
     public void scanButtonClick(){
 //        测试用
-        final MyCode myCode = new MyCode();
-        myCode.id = "111";
-        Server.getApi().get_time(myCode)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new MyAction1<GetTimeResult>() {
-                    @Override
-                    public void call() {
-                        if (mVar.result.equals("success")){
-                            Intent i = new Intent(MainActivity.this, UsingActivity.class);
-                            i.putExtra("id", myCode.id);
-                            i.putExtra("time", mVar.time);
-                            MainActivity.this.startActivity(i);
-                        }
-                    }
-                });
+//        final MyCode myCode = new MyCode();
+//        myCode.id = "111";
+//        Server.getApi().get_time(myCode)
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(new MyAction1<GetTimeResult>() {
+//                    @Override
+//                    public void call() {
+//                        if (mVar.result.equals("success")){
+//                            Intent i = new Intent(MainActivity.this, UsingActivity.class);
+//                            i.putExtra("id", myCode.id);
+//                            i.putExtra("time", mVar.time);
+//                            MainActivity.this.startActivity(i);
+//                        }
+//                    }
+//                });
 
-//
-//        Intent i = new Intent(this, ScanActivity.class);
-//        this.startActivityForResult(i, SCAN_CODE);
+
+        Intent i = new Intent(this, ScanActivity.class);
+        this.startActivityForResult(i, SCAN_CODE);
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){
